@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.helloworld.entity.Person" table="HIBERNATE_PERSON">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="company" type="java.lang.String">
+            <column name="COMPANY" />
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="AGE" />
+        </property>
+        <property name="registerTime" type="java.util.Date">
+            <column name="REGISTERTIME" />
+        </property>
+    </class>
+</hibernate-mapping>
