@@ -9,6 +9,8 @@ public class Person {
 	private String company;
 	private Integer age;
 	private Date registerTime;
+	// 测试派生属性
+	private String desc;
 	
 	public Person() {
 		super();
@@ -57,6 +59,12 @@ public class Person {
 	}
 	public void setRegisterTime(Date registerTime) {
 		this.registerTime = registerTime;
+	}
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 	
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-10-3 19:05:04 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+
+    <class name="com.hibernate.helloworld.entity.LargeText" table="HIBERNATE_LARGETEXT">
+    
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        
+        <!-- MySql -->
+		<!-- 若希望精准映射类型, 可以使用sql-type -->
+        <property name="content" type="clob">
+            <column name="CONTENT" />
+        </property>
+        <property name="image" type="blob">
+            <column name="IMAGE" />
+        </property>
+        
+    </class>
+    
+</hibernate-mapping>

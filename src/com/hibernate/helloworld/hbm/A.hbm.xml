@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-10-3 21:36:59 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+
+    <class name="com.hibernate.helloworld.entity.A" table="HIBERNATE_A">
+    
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="aOneField" type="java.lang.String" access="field">
+            <column name="AONEFIELD" />
+        </property>
+        <!-- 映射组成关系 -->
+        <component name="b" class="com.hibernate.helloworld.entity.B">
+        	<!-- 指定组成关系的组件的属性 -->
+        	<property name="bOneField" column="BONEFIELD"></property>
+        	<property name="bTwoField" column="BTWOFIELD"></property>
+        </component>
+        
+    </class>
+    
+</hibernate-mapping>

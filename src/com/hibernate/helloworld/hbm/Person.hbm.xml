@@ -3,7 +3,8 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.hibernate.helloworld.entity.Person" table="HIBERNATE_PERSON">
+    <class name="com.hibernate.helloworld.entity.Person" table="HIBERNATE_PERSON" 
+    	select-before-update="true">
         <id name="id" type="java.lang.Integer">
             <column name="ID" />
             <generator class="native" />
@@ -21,5 +22,6 @@
         <property name="registerTime" type="java.util.Date">
             <column name="REGISTERTIME" />
         </property>
+        <property name="desc" formula="(SELECT NAME || AGE FROM HIBERNATE_PERSON N WHERE N.ID = ID)"></property>
     </class>
 </hibernate-mapping>
