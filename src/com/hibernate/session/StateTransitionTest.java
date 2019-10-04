@@ -15,6 +15,7 @@ import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.jdbc.Work;
@@ -42,9 +43,9 @@ class StateTransitionTest {
 		//加载配置文件
 		Configuration cfg = new Configuration().configure();
 		//声明 ServiceRegistry
-		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(cfg.getProperties()).build();
+		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().configure().build();		
 		//创建 SessionFactory
-		sessionFactory = cfg.buildSessionFactory(serviceRegistry);
+		sessionFactory = new MetadataSources(serviceRegistry).buildMetadata().buildSessionFactory();
 		//创建 Session
 		session = sessionFactory.openSession();
 		//创建 Transaction
@@ -105,12 +106,12 @@ class StateTransitionTest {
 	@Test
 	public void testTime() {
 		Date date = new Date();
-//		Time time = new Time(date, date, date);
-//		session.save(time);
+		Time time = new Time(date, date, date);
+		session.save(time);
 		
-		Time time = (Time) session.get(Time.class, 52);
+//		Time time = (Time) session.get(Time.class, 52);
 		//Time [id=52, date=2019-09-26, time=23:29:57, timestamp=2019-09-26 23:29:57.0]
-		System.out.println(time);
+//		System.out.println(time);
 		
 	}
 	

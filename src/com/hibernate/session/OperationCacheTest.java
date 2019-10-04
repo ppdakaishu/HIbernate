@@ -3,6 +3,7 @@ package com.hibernate.session;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
@@ -25,9 +26,9 @@ class OperationCacheTest {
 		//加载配置文件
 		Configuration cfg = new Configuration().configure();
 		//声明 ServiceRegistry
-		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(cfg.getProperties()).build();
+		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().configure().build();		
 		//创建 SessionFactory
-		sessionFactory = cfg.buildSessionFactory(serviceRegistry);
+		sessionFactory = new MetadataSources(serviceRegistry).buildMetadata().buildSessionFactory();
 		//创建 Session
 		session = sessionFactory.openSession();
 		//创建 Transaction

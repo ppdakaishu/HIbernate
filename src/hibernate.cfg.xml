@@ -2,6 +2,7 @@
 <!DOCTYPE hibernate-configuration PUBLIC
 		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+		
 <hibernate-configuration>
     <session-factory>
     
@@ -26,6 +27,11 @@
     	<!-- 这样可以实现, 删除对象后, 该对象还可以进行新增或更新操作, 因为正常删除对象后, 对象还存在 OID -->
     	<!-- 执行新增或更新可能会报错, 如执行 saveOrupdate() -->
     	<property name="hibernate.use_identifier_rollback">true</property>
+    	
+    	<!-- hibernate 5.2.17  -->
+    	<!-- 自动生成DDL，修改表时需要此配置 -->
+    	<!-- oracle -> 用户名;	mysql -> 数据库名 -->
+		<property name="hibernate.default_schema">learnUser</property>
     	
     	<!-- 配置 C3P0 -->
     	<!-- 数据库连接池的最大连接数 -->
