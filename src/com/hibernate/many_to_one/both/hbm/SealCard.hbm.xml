@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hibernate.many_to_one.both.entity">
+    <class name="SealCard" table="HIBERNATE_BOTH_SEALCARD">
+    
+        <id name="sealCardId" type="java.lang.Integer">
+            <column name="SEALCARDID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="cardNo" type="java.lang.String">
+            <column name="CARDNO" />
+        </property>
+        
+        <!-- 映射多对一的关联关系 -->
+        <!-- name : 实体类中, many 一端关联 one 一端的属性名 -->
+        <!-- class : one 一端的类名 -->
+        <!-- column : one 一端在 many 一端对应的数据表中外键的名字 -->
+        <many-to-one name="accInfo" class="AccInfo">
+            <column name="ACCID" />
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>

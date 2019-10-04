@@ -54,9 +54,16 @@
     	
     	<!-- 指定关联的 .hbm.xml 文件 -->
     	<mapping resource="com/hibernate/helloworld/hbm/Person.hbm.xml" />
-    	<mapping resource="com/hibernate/helloworld/hbm/Time.hbm.xml" />
-    	<mapping resource="com/hibernate/helloworld/hbm/LargeText.hbm.xml" />
-    	<mapping resource="com/hibernate/helloworld/hbm/A.hbm.xml" />
+    	
+    	<mapping resource="com/hibernate/session/hbm/Time.hbm.xml" />
+    	<mapping resource="com/hibernate/session/hbm/LargeText.hbm.xml" />
+    	<mapping resource="com/hibernate/session/hbm/A.hbm.xml" />
+    
+    	<mapping resource="com/hibernate/many_to_one/one/hbm/AccInfo.hbm.xml" />
+    	<mapping resource="com/hibernate/many_to_one/one/hbm/SealCard.hbm.xml" />
+    	
+    	<mapping resource="com/hibernate/many_to_one/both/hbm/AccInfo.hbm.xml" />
+    	<mapping resource="com/hibernate/many_to_one/both/hbm/SealCard.hbm.xml" />
     
     </session-factory>
 </hibernate-configuration>

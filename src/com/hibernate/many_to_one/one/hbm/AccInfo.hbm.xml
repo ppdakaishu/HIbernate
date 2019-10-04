@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.many_to_one.one.entity.AccInfo" table="HIBERNATE_ONE_ACCINFO">
+    
+        <id name="accId" type="java.lang.Integer">
+            <column name="ACCID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="accName" type="java.lang.String">
+            <column name="ACCNAME" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

@@ -4,7 +4,7 @@
 <!-- Generated 2019-10-3 21:36:59 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
 
-    <class name="com.hibernate.helloworld.entity.A" table="HIBERNATE_A">
+    <class name="com.hibernate.session.entity.A" table="HIBERNATE_A">
     
         <id name="id" type="java.lang.Integer">
             <column name="ID" />
@@ -15,7 +15,7 @@
             <column name="AONEFIELD" />
         </property>
         <!-- 映射组成关系 -->
-        <component name="b" class="com.hibernate.helloworld.entity.B">
+        <component name="b" class="com.hibernate.session.entity.B">
         	<!-- 指定组成关系的组件的属性 -->
         	<property name="bOneField" column="BONEFIELD"></property>
         	<property name="bTwoField" column="BTWOFIELD"></property>

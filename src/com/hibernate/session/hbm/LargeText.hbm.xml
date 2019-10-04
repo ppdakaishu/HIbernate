@@ -4,7 +4,7 @@
 <!-- Generated 2019-10-3 19:05:04 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
 
-    <class name="com.hibernate.helloworld.entity.LargeText" table="HIBERNATE_LARGETEXT">
+    <class name="com.hibernate.session.entity.LargeText" table="HIBERNATE_LARGETEXT">
     
         <id name="id" type="java.lang.Integer">
             <column name="ID" />

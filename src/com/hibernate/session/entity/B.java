@@ -1,4 +1,4 @@
-package com.hibernate.helloworld.entity;
+package com.hibernate.session.entity;
 
 public class B {
 

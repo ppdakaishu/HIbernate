@@ -1,8 +1,6 @@
 package com.hibernate.session;
 
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Blob;
@@ -24,11 +22,11 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.hibernate.helloworld.entity.A;
-import com.hibernate.helloworld.entity.B;
-import com.hibernate.helloworld.entity.LargeText;
 import com.hibernate.helloworld.entity.Person;
-import com.hibernate.helloworld.entity.Time;
+import com.hibernate.session.entity.A;
+import com.hibernate.session.entity.B;
+import com.hibernate.session.entity.LargeText;
+import com.hibernate.session.entity.Time;
 
 //对象状态转换测试
 class StateTransitionTest {

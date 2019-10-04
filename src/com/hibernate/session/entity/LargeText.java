@@ -1,4 +1,4 @@
-package com.hibernate.helloworld.entity;
+package com.hibernate.session.entity;
 
 import java.sql.Blob;
 import java.sql.Clob;

@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.hibernate.helloworld.entity.Time" table="HIBERNATE_TIME">
+    <class name="com.hibernate.session.entity.Time" table="HIBERNATE_TIME">
     
         <id name="id" type="java.lang.Integer">
             <column name="ID" />

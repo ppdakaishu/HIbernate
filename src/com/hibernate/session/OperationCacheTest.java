@@ -52,12 +52,12 @@ class OperationCacheTest {
 	//clear() : 清理缓存
 	@Test
 	public void testSessionClear() {
-		Person person = (Person) session.get(Person.class, 4);
+		Person person = session.get(Person.class, 4);
 		System.out.println(person);
 		
 		session.clear();
 		//清理缓存后, 会再发送一次查询语句
-		Person person2 = (Person) session.get(Person.class, 4);
+		Person person2 = session.get(Person.class, 4);
 		System.out.println(person2);
 	}
 	
@@ -65,7 +65,7 @@ class OperationCacheTest {
 	//			    以使 Session 缓存中对象的状态和数据表中对应的记录保持一致
 	@Test
 	public void testSessionRefresh() {
-		Person person = (Person) session.get(Person.class, 4);
+		Person person = session.get(Person.class, 4);
 		System.out.println(person);
 		
 		//为了测试, 在此处打断点. 手动修改数据库记录
@@ -86,7 +86,7 @@ class OperationCacheTest {
 	//		因为 save() 方法后, 必须保证对象的主键是存在的. 
 	@Test
 	public void testSessionFlush() {
-		Person person = (Person) session.get(Person.class, 4);
+		Person person = session.get(Person.class, 4);
 		person.setCompany("Yzj");
 		
 		//使用 QBC 方式进行查询, 会在事务 commit 之前执行 flush() 以确保得到的是最新的记录. 
@@ -98,10 +98,10 @@ class OperationCacheTest {
 	@Test
 	public void test() {
 		
-		Person person = (Person) session.get(Person.class, 4);
+		Person person = session.get(Person.class, 4);
 		System.out.println(person);
 		
-		Person person2 = (Person) session.get(Person.class, 4);
+		Person person2 = session.get(Person.class, 4);
 		System.out.println(person2);
 		
 	}
