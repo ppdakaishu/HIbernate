@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.hibernate.many_to_one.both.entity">
-    <class name="SealCard" table="HIBERNATE_BOTH_SEALCARD">
+    <class name="SealCard" table="HIBERNATE_MTO_BOTH_SEALCARD">
     
         <id name="sealCardId" type="java.lang.Integer">
             <column name="SEALCARDID" />

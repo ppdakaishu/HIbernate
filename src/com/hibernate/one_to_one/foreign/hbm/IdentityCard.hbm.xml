@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.one_to_one.foreign.entity.IdentityCard" table="HIBERNATE_OTO_F_IDENTITYCARD">
+    
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="cardNo" type="java.lang.String">
+            <column name="CARDNO" />
+        </property>
+        
+        <!-- 映射一对一关联关系 : 在对应的数据表中已经有外键了, 当前持久类使用 one-to-one -->
+        <!-- 没有外键的一端需要使用 one-to-one -->
+        <!-- 该元素使用 property-ref 属性指定使用被关联实体主键以外的字段作为关联字段  -->
+        <one-to-one name="citizen" class="com.hibernate.one_to_one.foreign.entity.Citizen" 
+        	property-ref="identityCard">
+        </one-to-one>
+        
+    </class>
+</hibernate-mapping>

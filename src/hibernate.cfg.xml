@@ -65,5 +65,11 @@
     	<mapping resource="com/hibernate/many_to_one/both/hbm/AccInfo.hbm.xml" />
     	<mapping resource="com/hibernate/many_to_one/both/hbm/SealCard.hbm.xml" />
     
+    	<mapping resource="com/hibernate/one_to_one/foreign/hbm/Citizen.hbm.xml" />
+    	<mapping resource="com/hibernate/one_to_one/foreign/hbm/IdentityCard.hbm.xml" />
+    	
+    	<mapping resource="com/hibernate/one_to_one/primary/hbm/Citizen.hbm.xml" />
+    	<mapping resource="com/hibernate/one_to_one/primary/hbm/IdentityCard.hbm.xml" />
+    
     </session-factory>
 </hibernate-configuration>

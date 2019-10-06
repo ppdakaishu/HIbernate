@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.one_to_one.primary.entity.IdentityCard" table="HIBERNATE_OTO_P_IDENTITYCARD">
+    
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <!-- 使用外键的方式生成当前主键 -->
+            <generator class="foreign">
+            	<!-- 指定使用当前持久化类的哪一个属性的主键作为外键 -->
+            	<param name="property">citizen</param>
+            </generator>
+        </id>
+        
+        <property name="cardNo" type="java.lang.String">
+            <column name="CARDNO" />
+        </property>
+        
+        <one-to-one name="citizen" class="com.hibernate.one_to_one.primary.entity.Citizen" constrained="true"></one-to-one>
+        
+    </class>
+</hibernate-mapping>

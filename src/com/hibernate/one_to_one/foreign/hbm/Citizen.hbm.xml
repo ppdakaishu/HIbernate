@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.one_to_one.foreign.entity.Citizen" table="HIBERNATE_OTO_F_CITIZEN">
+    
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="citizenName" type="java.lang.String">
+            <column name="CITIZENNAME" />
+        </property>
+        
+        <!--  -->
+        <many-to-one name="identityCard" class="com.hibernate.one_to_one.foreign.entity.IdentityCard" unique="true">
+        	<column name="IDENTITYCARD_ID"></column>
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>
