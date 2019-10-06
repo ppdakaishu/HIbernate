@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.many_to_many.both.entity.Item" table="HIBERNTE_MTM_B_ITEM">
+    
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="itemName" type="java.lang.String">
+            <column name="ITEMNAME" />
+        </property>
+        
+        <!-- table : 指定中间表 -->
+        <set name="categotys" table="HIBERNTE_MTM_B_CI">
+            <key>
+                <column name="I_ID" />
+            </key>
+            <!-- many-to-many : 指定多对多的关联关系 -->
+            <!-- column : 指定 set 集合中的持久化类在中间表的外键列的名称 -->
+            <many-to-many class="com.hibernate.many_to_many.both.entity.Categoty" column="C_ID"></many-to-many>
+        </set>
+        
+    </class>
+</hibernate-mapping>

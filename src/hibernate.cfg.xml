@@ -70,6 +70,12 @@
     	
     	<mapping resource="com/hibernate/one_to_one/primary/hbm/Citizen.hbm.xml" />
     	<mapping resource="com/hibernate/one_to_one/primary/hbm/IdentityCard.hbm.xml" />
+    	
+    	<mapping resource="com/hibernate/many_to_many/one/hbm/Categoty.hbm.xml" />
+    	<mapping resource="com/hibernate/many_to_many/one/hbm/Item.hbm.xml" />
+    
+    	<mapping resource="com/hibernate/many_to_many/both/hbm/Categoty.hbm.xml" />
+    	<mapping resource="com/hibernate/many_to_many/both/hbm/Item.hbm.xml" />
     
     </session-factory>
 </hibernate-configuration>
