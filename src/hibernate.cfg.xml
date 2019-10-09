@@ -76,6 +76,12 @@
     
     	<mapping resource="com/hibernate/many_to_many/both/hbm/Categoty.hbm.xml" />
     	<mapping resource="com/hibernate/many_to_many/both/hbm/Item.hbm.xml" />
+    	
+    	<mapping resource="com/hibernate/inherit/subclass/hbm/Person.hbm.xml" />
+    	<!-- 
+    	<mapping resource="com/hibernate/inherit/joined_subclass/hbm/Person.hbm.xml" />
+    	<mapping resource="com/hibernate/inherit/union_subclass/hbm/Person.hbm.xml" />
+    	-->
     
     </session-factory>
 </hibernate-configuration>
