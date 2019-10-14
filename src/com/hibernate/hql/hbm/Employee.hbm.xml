@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.hql.entity.Employee" table="HIBERNATE_HQL_EMPLOYEE">
+    
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="employeeName" type="java.lang.String">
+            <column name="EMPLOYEENAME" />
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="AGE" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <property name="salary" type="float">
+            <column name="SALARY" />
+        </property>
+        
+        <many-to-one name="department" class="com.hibernate.hql.entity.Department">
+            <column name="DEPARTMENT_ID" />
+        </many-to-one>
+        
+    </class>
+    
+    <!-- 命名查询 -->
+    <query name="namedQueryTest"><![CDATA[FROM Employee WHERE AGE > :MINAGE AND AGE < :MAXAGE]]></query>
+    
+</hibernate-mapping>

@@ -82,6 +82,9 @@
     	<mapping resource="com/hibernate/inherit/joined_subclass/hbm/Person.hbm.xml" />
     	<mapping resource="com/hibernate/inherit/union_subclass/hbm/Person.hbm.xml" />
     	-->
+    	
+    	<mapping resource="com/hibernate/hql/hbm/Department.hbm.xml" />
+    	<mapping resource="com/hibernate/hql/hbm/Employee.hbm.xml" />
     
     </session-factory>
 </hibernate-configuration>
